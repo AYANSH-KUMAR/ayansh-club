@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  
+  
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHANDRADEEP GHAT TOURNAMENT</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--primary:#f1c40f;
+--glass:rgba(255,255,255,0.12);
+--border:rgba(255,255,255,0.25);
+--bg-dark:rgba(0,0,0,0.75);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:'Rajdhani',sans-serif;
+background:linear-gradient(var(--bg-dark),var(--bg-dark)),
+url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=2000') no-repeat center center fixed;
+background-size:cover;
+color:#fff;
+}
+
+/* NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+height:70px;
+background:rgba(0,0,0,0.85);
+display:flex;
+align-items:center;
+padding:0 8%;
+z-index:2000;
+border-bottom:2px solid var(--primary);
+}
+.logo{
+font-size:1.8rem;
+font-weight:700;
+color:var(--primary);
+}
+
+/* HERO */
+.hero{
+min-height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+.hero h1{
+font-size:3rem;
+margin-bottom:20px;
+}
+.btn-main{
+padding:12px 30px;
+background:var(--primary);
+border:none;
+border-radius:30px;
+font-weight:700;
+cursor:pointer;
+color:#000;
+text-decoration:none;
+}
+
+/* SECTIONS */
+section{padding:80px 6%;}
+
+.glass-card{
+width:100%;
+max-width:1000px;
+margin:auto;
+background:var(--glass);
+backdrop-filter:blur(18px);
+border:1px solid var(--border);
+border-radius:25px;
+padding:45px;
+box-shadow:0 25px 50px rgba(0,0,0,0.6);
+}
+
+/* SLIDER */
+.slider-container{
+width:100%;
+height:260px;
+overflow:hidden;
+border-radius:20px;
+margin-top:20px;
+}
+.slides{
+display:flex;
+width:300%;
+height:100%;
+animation:slideAnim 9s infinite;
+}
+.slides img{
+width:33.33%;
+object-fit:cover;
+}
+@keyframes slideAnim{
+0%{transform:translateX(0);}
+33%{transform:translateX(-33.33%);}
+66%{transform:translateX(-66.66%);}
+100%{transform:translateX(0);}
+}
+
+/* FORM */
+h2{
+text-align:center;
+font-size:2.5rem;
+margin-bottom:35px;
+color:var(--primary);
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+margin-bottom:30px;
+}
+
+input{
+width:100%;
+padding:15px;
+border-radius:14px;
+border:1px solid rgba(255,255,255,0.3);
+background:rgba(255,255,255,0.08);
+color:#fff;
+font-size:15px;
+transition:0.3s;
+font-family:'Poppins',sans-serif;
+}
+
+input:focus{
+outline:none;
+border-color:var(--primary);
+background:rgba(255,255,255,0.15);
+}
+
+/* PLAYER CARD */
+.player-card{
+background:rgba(255,255,255,0.07);
+padding:22px;
+border-radius:20px;
+margin-bottom:22px;
+border:1px solid rgba(255,255,255,0.25);
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+/* ROLE GRID FIXED */
+.role-box{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:12px;
+}
+
+.role-box label{
+display:flex;
+align-items:center;
+gap:8px;
+background:rgba(255,255,255,0.1);
+padding:10px 14px;
+border-radius:25px;
+cursor:pointer;
+font-size:14px;
+transition:0.2s;
+}
+
+.role-box label:hover{
+background:rgba(241,196,15,0.25);
+}
+
+.role-box input[type="checkbox"]{
+accent-color:var(--primary);
+transform:scale(1.1);
+}
+
+/* BUTTONS */
+.button-row{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+margin-top:15px;
+}
+
+.btn{
+padding:12px 28px;
+border-radius:30px;
+font-weight:600;
+cursor:pointer;
+border:none;
+}
+
+.btn-outline{
+background:transparent;
+border:2px solid #fff;
+color:#fff;
+}
+
+.btn-gold{
+background:var(--primary);
+color:#000;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 12px 25px rgba(0,0,0,0.5);
+}
+
+/* PAYMENT */
+.qr-wrapper{text-align:center;}
+.qr-box{
+background:#fff;
+padding:20px;
+border-radius:20px;
+display:inline-block;
+margin-bottom:20px;
+}
+
+/* FOOTER */
+footer{
+background:#000;
+padding:35px;
+text-align:center;
+margin-top:50px;
+}
+
+@media(max-width:768px){
+.form-grid{grid-template-columns:1fr;}
+.glass-card{padding:30px;}
+.hero h1{font-size:2.2rem;}
+}
+
+
+/* THEME COLORS */
+body.light-mode{
+background:#f5f5f5;
+color:#000;
+}
+
+body.light-mode nav{
+background:#ffffff;
+}
+
+body.light-mode .glass-card{
+background:rgba(0,0,0,0.05);
+border:1px solid rgba(0,0,0,0.1);
+}
+
+body.light-mode input{
+background:#fff;
+color:#000;
+border:1px solid #ccc;
+}
+
+body.light-mode .player-card{
+background:#ffffff;
+}
+
+body.light-mode footer{
+background:#111;
+color:#fff;
+}
+
+/* TOGGLE BUTTON */
+.theme-toggle{
+position:fixed;
+right:20px;
+bottom:20px;
+width:55px;
+height:55px;
+border-radius:50%;
+border:none;
+cursor:pointer;
+font-size:22px;
+background:#f1c40f;
+color:#000;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+z-index:3000;
+transition:0.3s;
+}
+
+.theme-toggle:hover{
+transform:scale(1.1);
+}
+
+
+
+</style>
+</head>
+<body>
+
+<nav>
+<div class="logo">BRIJESH CRICKET CLUB</div>
+</nav>
+
+<div class="hero">
+<h1>CHAMPIONS TROPHY 2026</h1>
+<a href="#register" class="btn-main">रजिस्ट्रेशन शुरू करें</a>
+</div>
+
+<section id="about">
+<div class="glass-card">
+<h2>About Tournament</h2>
+<div class="slider-container">
+<div class="slides">
+<!--<img src="https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=1000">
+<img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=1000">
+<img src="https://images.unsplash.com/photo-1505843513577-22bb7d21e455?w=1000">-->
+
+<img srcset="" src="virat1.jpg" alt="">
+<img srcset="" src="v2.jpg" alt="">
+<img srcset="" src="v3.jpg" alt="">
+<img srcset="" src="v4.jpg" alt="">
+ 
+ <img srcset="" src="v5.jpg" alt="">
+ 
+ <img srcset="" src="v6.jpg" alt="">
+ <img srcset="" src="v7.jpg" alt="">
+
+
+</div>
+</div>
+</div>
+</section>
+
+<section id="register">
+<div class="glass-card">
+
+<h2>Team Registration</h2>
+
+<form action="https://formsubmit.co/hitlerkasathi@gmail.com" method="POST" id="finalForm">
+
+<div class="form-grid">
+<input type="text" name="TeamName" placeholder="Team Name" required>
+<input type="email" name="Email" placeholder="Email" required>
+<input type="text" name="City" placeholder="City" required>
+<input type="tel" name="Contact" placeholder="Mobile Number" required>
+</div>
+
+<hr style="margin:30px 0;opacity:.3;">
+
+<h3 style="margin-bottom:15px;">Add Players</h3>
+
+<div id="playersContainer"></div>
+
+<div class="button-row">
+<button type="button" onclick="addPlayer()" class="btn btn-outline">+ Add Player</button>
+<button type="button" onclick="submitForm()" class="btn btn-gold">Final Submit</button>
+</div>
+
+<input type="hidden" name="PlayersData" id="hiddenPlayers">
+
+</form>
+</div>
+</section>
+
+<section id="payment">
+<div class="glass-card qr-wrapper">
+<h2>Payment Portal</h2>
+<div class="qr-box">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=9792222013@ybl&am=1000">
+</div>
+<br>
+<a href="upi://pay?pa=9792222013@ybl&am=1000" class="btn btn-gold">Pay via UPI</a>
+</div>
+</section>
+
+<!--<footer>
+  <a href="https://www.facebook.com/hitlerhitpage" target="_blank">Follow me on Facebook</a>
+<p>© 2026 Elite Cricket Tournament</p>
+</footer>
+
+
+
+
+
+
+<footer>
+<style>
+.footer-content{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
+}
+
+.social-icons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.social-icons a{
+width:45px;
+height:45px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:rgba(255,255,255,0.1);
+color:#fff;
+font-size:20px;
+transition:0.3s;
+text-decoration:none;
+}
+
+.social-icons a:hover{
+transform:translateY(-5px);
+background:#f1c40f;
+color:#000;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+footer{
+background:#000;
+padding:40px 20px;
+text-align:center;
+color:#fff;
+margin-top:60px;
+}
+</style>
+
+
+
+
+<footer>
+<style>
+.footer-content{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
+}
+
+.social-icons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.social-icons a{
+width:45px;
+height:45px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:rgba(255,255,255,0.1);
+color:#fff;
+font-size:20px;
+transition:0.3s;
+text-decoration:none;
+}
+
+.social-icons a:hover{
+transform:translateY(-5px);
+background:#f1c40f;
+color:#000;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+footer{
+background:#000;
+padding:40px 20px;
+text-align:center;
+color:#fff;
+margin-top:60px;
+}
+</style>
+
+<div class="footer-content">
+
+<h3>Follow Us</h3>
+
+<div class="social-icons">
+<a href="https://instagram.com/" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://facebook.com/" target="_blank">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<a href="https://wa.me/919792222013" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<a href="https://youtube.com/" target="_blank">
+<i class="fa-brands fa-youtube"></i>
+</a>
+</div>
+
+<p>© 2026 CHANDRADEEP GHAT TOURNAMENT | All Rights Reserved</p>
+
+</div>
+</footer>--><footer>
+<style>
+footer{
+background:#000;
+padding:40px 20px;
+text-align:center;
+color:#fff;
+margin-top:60px;
+}
+
+.footer-content{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
+}
+
+.social-icons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.social-icons a{
+width:50px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:rgba(255,255,255,0.08);
+text-decoration:none;
+color:#ffffff !important;   /* 🔥 FORCE WHITE */
+font-size:22px;
+transition:0.3s;
+}
+
+.social-icons a:visited{
+color:#ffffff !important;
+}
+
+.social-icons a:hover{
+transform:translateY(-6px);
+background:#f1c40f;
+color:#000 !important;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+</style>
+
+<div class="footer-content">
+
+<h3>Follow Us</h3>
+
+<div class="social-icons">
+<a href="https://instagram.com/cristia.ai" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://facebook.com/" target="_blank">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<a href="https://wa.me/919792222013" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<a href="https://youtube.com/" target="_blank">
+<i class="fa-brands fa-youtube"></i>
+</a>
+</div>
+
+<p>© 2026 CHANDRADEEP GHAT TOURNAMENT | All Rights Reserved</p>
+
+</div>
+</footer>
+
+
+
+
+
+
+<script>
+function addPlayer(){
+const container=document.getElementById("playersContainer");
+const div=document.createElement("div");
+div.classList.add("player-card");
+
+div.innerHTML=`
+<input type="text" placeholder="Player Name" required>
+<div class="role-box">
+<label><input type="checkbox" value="Captain"> Captain</label>
+<label><input type="checkbox" value="Batsman"> Batsman</label>
+<label><input type="checkbox" value="Bowler"> Bowler</label>
+<label><input type="checkbox" value="Wicketkeeper"> Wicketkeeper</label>
+<label><input type="checkbox" value="All-Rounder"> All-Rounder</label>
+</div>
+`;
+
+container.appendChild(div);
+}
+
+function submitForm(){
+const players=document.querySelectorAll(".player-card");
+if(players.length===0){
+alert("At least one player add karein");
+return;
+}
+
+let data="";
+for(let player of players){
+const name=player.querySelector("input[type=text]").value;
+const roles=[...player.querySelectorAll("input[type=checkbox]:checked")].map(cb=>cb.value);
+
+if(!name||roles.length===0){
+alert("Har player ka naam aur role select karein");
+return;
+}
+
+data+=`${name} - ${roles.join(", ")}\n`;
+}
+
+document.getElementById("hiddenPlayers").value=data;
+document.getElementById("finalForm").submit();
+}
+
+
+function toggleTheme(){
+document.body.classList.toggle("light-mode");
+
+let btn=document.getElementById("themeBtn");
+
+if(document.body.classList.contains("light-mode")){
+btn.innerHTML="☀️";
+localStorage.setItem("theme","light");
+}else{
+btn.innerHTML="🌙";
+localStorage.setItem("theme","dark");
+}
+}
+
+/* Remember Theme */
+window.onload=function(){
+if(localStorage.getItem("theme")==="light"){
+document.body.classList.add("light-mode");
+document.getElementById("themeBtn").innerHTML="☀️";
+}
+}
+
+</script>
+<button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">🌙</button>
+</body>
+</html>
